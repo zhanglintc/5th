@@ -1,0 +1,14 @@
+
+    <LinearLayout android:orientation="horizontal" android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:layout_gravity="center" android:layout_weight="1" android:id="@+id/linearLayout2" android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <ImageView android:id="@+id/doublerow_image" android:layout_height="wrap_content" android:src="@drawable/item" android:layout_width="wrap_content"></ImageView>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_weight="20" android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <LinearLayout android:layout_weight="1" android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:layout_width="fill_parent">
+                <TextView android:textColor="#FFFFFF" android:textSize="17dip" android:text="歌手名字" android:id="@+id/doublerow_textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout android:layout_weight="1" android:id="@+id/linearLayout5" android:layout_height="wrap_content" android:layout_width="fill_parent">
+                <TextView android:textSize="14dip" android:text="歌手歌曲数" android:id="@+id/doublerow_textView2" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>

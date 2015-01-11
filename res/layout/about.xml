@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dip">
+<TextView
+	android:id="@+id/about_content"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="版本：3.1 升级说明：1.修正Notification显示 2.取消手势上下曲，以免误操作  Powered by Goyer Home @ NEU "/>
+</ScrollView>

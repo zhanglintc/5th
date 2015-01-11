@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ImageView
+    	android:id="@+id/musicitem_imageView"  
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:src="@drawable/item"
+	    android:paddingTop="22dip"
+    />
+<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+	<TextView
+		android:id="@+id/musicitem_textView"  
+	    android:layout_width="160dip" 
+	    android:layout_height="wrap_content" 
+	    android:text="歌曲名"
+	    android:textSize="18sp"
+	    android:singleLine="true"
+	    android:ellipsize="marquee"
+	    android:marqueeRepeatLimit="marquee_forever"
+	    android:paddingLeft="5dip"
+	    android:paddingTop="10dip"
+	></TextView>
+	<TextView
+		android:id="@+id/musicitem_textView2"  
+	    android:layout_width="120dip" 
+	    android:layout_height="wrap_content" 
+	    android:text="歌手名"
+	    android:textSize="13sp"
+	    android:singleLine="true"
+	    android:ellipsize="marquee"
+	    android:marqueeRepeatLimit="marquee_forever"
+	    android:paddingLeft="5dip"
+	></TextView>
+</LinearLayout>
+	<TextView
+		android:id="@+id/musicitem_duration"  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="60dip" 
+	    android:text="时间"
+	    android:textSize="15sp"
+	    android:paddingTop="20dip"
+	    android:singleLine="true"
+	    android:gravity="right"
+	    android:padding="10dip"
+	></TextView>
+
+</LinearLayout>

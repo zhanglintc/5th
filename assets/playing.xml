@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/background" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <TextView android:gravity="center" android:marqueeRepeatLimit="marquee_forever" android:textSize="30sp" android:textColor="#FFFFFF" android:ellipsize="marquee" android:layout_height="wrap_content" android:text="SongsName" android:layout_width="fill_parent" android:id="@+id/songname" android:singleLine="true"></TextView>
+        
+    </LinearLayout>
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <ImageView android:layout_width="150dip" android:src="@drawable/notfound" android:layout_height="150dip" android:id="@+id/image"></ImageView>
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+    <TextView android:textColor="#FFFFFF" android:layout_height="wrap_content" android:text="歌手" android:layout_width="wrap_content" android:id="@+id/textView2"></TextView>
+    <TextView android:textColor="#FFFFFF" android:layout_height="wrap_content" android:text="专辑" android:layout_width="wrap_content" android:id="@+id/textView1"></TextView>
+    <Button android:id="@+id/like" android:layout_height="wrap_content" android:text="like" android:layout_width="wrap_content"></Button>
+
+</LinearLayout>
+</LinearLayout>
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content">
+    <TextView android:gravity="center" android:textSize="30sp" android:textColor="#FFFFFF" android:layout_height="wrap_content" android:text="time" android:layout_width="wrap_content" android:id="@+id/time"></TextView>
+    <TextView android:gravity="center" android:textSize="30sp" android:textColor="#FFFFFF" android:layout_height="wrap_content" android:text="fulltime" android:layout_width="wrap_content" android:id="@+id/fulltime" android:paddingRight="1dip"></TextView>
+
+</LinearLayout>
+
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content">
+<SeekBar android:layout_width="fill_parent" android:id="@+id/seekbar" android:layout_height="wrap_content"></SeekBar>
+
+
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"></LinearLayout>
+
+
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content">
+
+<ImageButton android:id="@+id/next" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:background="@drawable/next" 
+android:layout_x="254dip" 
+android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/start" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:background="@drawable/start" 
+android:layout_x="182dip" 
+android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/stop" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:background="@drawable/stop" 
+android:layout_x="110dip" 
+android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/last" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:background="@drawable/last" 
+android:layout_x="110dip" 
+android:layout_y="393dip"></ImageButton>
+</LinearLayout>
+
+</LinearLayout>
+
+
+
+</LinearLayout>

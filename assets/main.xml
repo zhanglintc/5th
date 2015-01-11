@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/background" android:layout_width="match_parent" android:layout_height="match_parent">
+<ImageButton android:text="Button" android:id="@+id/album" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/album" android:layout_x="184dip" android:layout_y="61dip"></ImageButton>
+<ImageButton android:background="@drawable/artist" android:id="@+id/artist" android:layout_x="40dip" android:layout_y="61dip" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageButton>
+<TableRow android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_x="118dip" android:layout_width="wrap_content" android:layout_y="36dip"></TableRow>
+<ImageButton android:id="@+id/songs" android:background="@drawable/songs" android:layout_x="185dip" android:layout_y="226dip" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageButton>
+<ImageButton android:id="@+id/playlist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/playlist" android:layout_x="41dip" android:layout_y="226dip"></ImageButton>
+</AbsoluteLayout>

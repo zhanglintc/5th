@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AbsoluteLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/background" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+<TextView android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:textColor="#FFFFFF" android:textSize="30sp" android:text="SongsName" android:layout_height="wrap_content" android:singleLine="true" android:layout_width="fill_parent" android:gravity="center" android:id="@+id/songname" android:layout_x="0dip" android:layout_y="36dip"></TextView>
+<SeekBar android:id="@+id/seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_x="2dip" android:layout_y="345dip"></SeekBar>
+<ImageButton android:id="@+id/next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/next" android:layout_x="254dip" android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/start" android:layout_x="182dip" android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/stop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/stop" android:layout_x="110dip" android:layout_y="393dip"></ImageButton>
+<ImageButton android:id="@+id/last" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/last" android:layout_x="34dip" android:layout_y="393dip"></ImageButton>
+<TextView android:textColor="#FFFFFF" android:textSize="30sp" android:text="time" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:id="@+id/time" android:layout_x="14dip" android:layout_y="301dip"></TextView>
+<TextView android:textColor="#FFFFFF" android:textSize="30sp" android:text="fulltime" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:id="@+id/fulltime" android:layout_x="221dip" android:layout_y="298dip"></TextView>
+<ImageView android:layout_width="150dip" android:id="@+id/image" android:src="@drawable/notfound" android:layout_height="150dip" android:layout_x="12dip" android:layout_y="100dip"></ImageView>
+<TextView android:textColor="#FFFFFF" android:text="专辑" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView1" android:layout_x="257dip" android:layout_y="114dip"></TextView>
+<TextView android:textColor="#FFFFFF" android:text="歌手" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView2" android:layout_x="256dip" android:layout_y="158dip"></TextView>
+<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="like" android:id="@+id/like" android:layout_x="248dip" android:layout_y="197dip"></Button>
+</AbsoluteLayout>
