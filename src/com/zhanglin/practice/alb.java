@@ -1,4 +1,4 @@
-package com.zhanglin.practice;
+ï»¿package com.zhanglin.practice;
 
 import java.io.File;
 
@@ -27,7 +27,7 @@ public class alb extends Activity
 	private Cursor c;
 	private int[] _ids;
 	private String[] _titles;
-	private String[] _path; // ÒôÀÖÎÄ¼şµÄÂ·¾¶
+	private String[] _path; // éŸ³ä¹æ–‡ä»¶çš„è·¯å¾„
 	private String[] _artists;
 	private String[] _album;
 	private long[] _duration;
@@ -35,7 +35,7 @@ public class alb extends Activity
 	private int pos;
 	private String albumName;
 	private MusicListAdapter adapter;
-	/* ÉÏÏÂÎÄ²Ëµ¥Ïî */
+	/* ä¸Šä¸‹æ–‡èœå•é¡¹ */
 	private static final int PLAY_ITEM=Menu.FIRST;
 	private static final int DELETE_ITEM=Menu.FIRST+1;
 
@@ -65,7 +65,7 @@ public class alb extends Activity
 		setListData();
 	}
 
-	/* ²¥·ÅÑ¡ÖĞµÄÒôÀÖ */
+	/* æ’­æ”¾é€‰ä¸­çš„éŸ³ä¹ */
 	private void playMusic(int position)
 	{
 		Intent intent=new Intent(alb.this,PlayingActivity.class);
@@ -76,13 +76,13 @@ public class alb extends Activity
 		finish();
 	}
 
-	/* ´ÓÁĞ±íÖĞÉ¾³ıÑ¡ÖĞµÄÒôÀÖ */
+	/* ä»åˆ—è¡¨ä¸­åˆ é™¤é€‰ä¸­çš„éŸ³ä¹ */
 	private void deleteMusic(int position)
 	{
 		this.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,MediaStore.Audio.Media._ID+"="+_ids[position],null);
 	}
 
-	/* ´ÓsdcardÖĞÉ¾³ıÑ¡ÖĞµÄÒôÀÖ */
+	/* ä»sdcardä¸­åˆ é™¤é€‰ä¸­çš„éŸ³ä¹ */
 	private void deleteMusicFile(int position)
 	{
 		File file=new File(_path[pos]);
@@ -117,44 +117,44 @@ public class alb extends Activity
 
 	}
 
-	/* ´´½¨ÉÏÏÂÎÄ²Ëµ¥¼àÌıÆ÷ */
+	/* åˆ›å»ºä¸Šä¸‹æ–‡èœå•ç›‘å¬å™¨ */
 	class ContextMenuListener implements OnCreateContextMenuListener
 	{
 		@Override
 		public void onCreateContextMenu(ContextMenu menu,View view,ContextMenuInfo info)
 		{
-			menu.setHeaderTitle("²Ù×÷");
-			menu.add(0,PLAY_ITEM,0,"²¥·Å");
-			menu.add(0,DELETE_ITEM,0,"É¾³ı");
+			menu.setHeaderTitle("æ“ä½œ");
+			menu.add(0,PLAY_ITEM,0,"æ’­æ”¾");
+			menu.add(0,DELETE_ITEM,0,"åˆ é™¤");
 			final AdapterView.AdapterContextMenuInfo menuInfo=(AdapterView.AdapterContextMenuInfo)info;
 			pos=menuInfo.position;
 		}
 	}
 
-	/* ÉÏÏÂÎÄ²Ëµ¥µÄÄ³Ò»Ïî±»µã»÷Ê±»Øµ÷¸Ã·½·¨ */
+	/* ä¸Šä¸‹æ–‡èœå•çš„æŸä¸€é¡¹è¢«ç‚¹å‡»æ—¶å›è°ƒè¯¥æ–¹æ³• */
 	@Override
 	public boolean onContextItemSelected(MenuItem item)
 	{
 		switch(item.getItemId())
 		{
-		case PLAY_ITEM: // ¿ªÊ¼²¥·Å
+		case PLAY_ITEM: // å¼€å§‹æ’­æ”¾
 			playMusic(pos);
 			break;
 
-		case DELETE_ITEM: // É¾³ıÒ»Ê×¸èÇú
+		case DELETE_ITEM: // åˆ é™¤ä¸€é¦–æ­Œæ›²
 			AlertDialog.Builder builder=new AlertDialog.Builder(this);
-			builder.setMessage("ÕæµÄÒªÉ¾³ıÕâÊ×¸èÇúÂğ").setPositiveButton("ÊÇ",new DialogInterface.OnClickListener()
+			builder.setMessage("çœŸçš„è¦åˆ é™¤è¿™é¦–æ­Œæ›²å—").setPositiveButton("æ˜¯",new DialogInterface.OnClickListener()
 			{
 
 				@Override
 				public void onClick(DialogInterface dialog,int which)
 				{
-					deleteMusic(pos); // ´ÓÁĞ±íÖĞÉ¾³ıÒôÀÖ
-					deleteMusicFile(pos); // ´ÓsdcardÖĞÉ¾³ıÒôÀÖ
-					setListData(); // ´ÓĞÂ»ñµÃÁĞ±íÖĞÒ©ÏÔÊ¾µÄÊı¾İ
-					adapter.notifyDataSetChanged(); // ¸üĞÂÁĞ±íUI
+					deleteMusic(pos); // ä»åˆ—è¡¨ä¸­åˆ é™¤éŸ³ä¹
+					deleteMusicFile(pos); // ä»sdcardä¸­åˆ é™¤éŸ³ä¹
+					setListData(); // ä»æ–°è·å¾—åˆ—è¡¨ä¸­è¯æ˜¾ç¤ºçš„æ•°æ®
+					adapter.notifyDataSetChanged(); // æ›´æ–°åˆ—è¡¨UI
 				}
-			}).setNegativeButton("·ñ",null);
+			}).setNegativeButton("å¦",null);
 			AlertDialog ad=builder.create();
 			ad.show();
 			break;
@@ -199,10 +199,10 @@ public class alb extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		return true;
 	}
 
@@ -213,7 +213,7 @@ public class alb extends Activity
 		switch(item.getItemId())
 		{
 		case 1:
-			//Toast.makeText(MainActivity.this,"²¥·ÅÁĞ±í",Toast.LENGTH_LONG).show();
+			//Toast.makeText(MainActivity.this,"æ’­æ”¾åˆ—è¡¨",Toast.LENGTH_LONG).show();
 			Intent intent1=new Intent(alb.this,PlayListActivity.class);
 			startActivity(intent1);
 			break;
@@ -223,7 +223,7 @@ public class alb extends Activity
 			startActivity(playing);
 			break;
 		case 3:
-			//Toast.makeText(MainActivity.this,"¹ØÓÚ",Toast.LENGTH_LONG).show();
+			//Toast.makeText(MainActivity.this,"å…³äº",Toast.LENGTH_LONG).show();
 			Intent intent2=new Intent(alb.this,About.class);
 			startActivity(intent2);
 			break;

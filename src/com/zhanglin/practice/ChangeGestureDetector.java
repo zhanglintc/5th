@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 import android.view.MotionEvent;
@@ -16,15 +16,15 @@ public class ChangeGestureDetector extends SimpleOnGestureListener
 	@Override
 	public boolean onFling(MotionEvent e1,MotionEvent e2,float velocityX,float velocityY)
 	{
-		final int FLING_MIN_DISTANCE=100;// X»òÕßyÖáÉÏÒÆ¶¯µÄ¾àÀë(ÏñËØ)
-		final int FLING_MIN_VELOCITY=200;// x»òÕßyÖáÉÏµÄÒÆ¶¯ËÙ¶È(ÏñËØ/Ãë)
+		final int FLING_MIN_DISTANCE=100;// Xæˆ–è€…yè½´ä¸Šç§»åŠ¨çš„è·ç¦»(åƒç´ )
+		final int FLING_MIN_VELOCITY=200;// xæˆ–è€…yè½´ä¸Šçš„ç§»åŠ¨é€Ÿåº¦(åƒç´ /ç§’)
 		if((e1.getX()-e2.getX())>FLING_MIN_DISTANCE&&Math.abs(velocityX)>FLING_MIN_VELOCITY)
 		{
-			//activity.last();//ÉÏÒ»Çú²Ù×÷£¬Í¨¹ıactivityÖĞ¾²Ì¬º¯Êıµ÷ÓÃ
+			//activity.last();//ä¸Šä¸€æ›²æ“ä½œï¼Œé€šè¿‡activityä¸­é™æ€å‡½æ•°è°ƒç”¨
 		}
 		else if((e2.getX()-e1.getX())>FLING_MIN_DISTANCE&&Math.abs(velocityX)>FLING_MIN_VELOCITY)
 		{
-			//activity.next();//ÏÂÒ»Çú²Ù×÷
+			//activity.next();//ä¸‹ä¸€æ›²æ“ä½œ
 		}
 		PlayingActivity.gesture="true";
 		return super.onFling(e1,e2,velocityX,velocityY);

@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 
@@ -28,7 +28,7 @@ public class SongsActivity extends Activity
 	
 	private int[] _ids;
 	private String[] _titles;
-	private String[] _path; // ÒôÀÖÎÄ¼şµÄÂ·¾¶
+	private String[] _path; // éŸ³ä¹æ–‡ä»¶çš„è·¯å¾„
 	private String[] _artists;
 	private String[] _album;
 	private long[] _duration;
@@ -83,7 +83,7 @@ public class SongsActivity extends Activity
 			}
 		});
 	}
-	// ¶¨Òå×Ô¼ºµÄÊÊÅäÆ÷,×¢ÒâgetCountºÍgetView·½·¨
+	// å®šä¹‰è‡ªå·±çš„é€‚é…å™¨,æ³¨æ„getCountå’ŒgetViewæ–¹æ³•
 	private class MyAdapter extends BaseAdapter
 	{
 		@Override
@@ -144,7 +144,7 @@ public class SongsActivity extends Activity
 		if(c==null||c.getCount()==0)
 		{
 			builder=new AlertDialog.Builder(this);
-			builder.setMessage("´æ´¢ÁĞ±íÎª¿Õ...").setPositiveButton("È·¶¨",null);
+			builder.setMessage("å­˜å‚¨åˆ—è¡¨ä¸ºç©º...").setPositiveButton("ç¡®å®š",null);
 			ad=builder.create();
 			ad.show();
 		}
@@ -170,10 +170,10 @@ public class SongsActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		return true;
 	}
 	@Override

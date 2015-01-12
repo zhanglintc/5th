@@ -1,4 +1,4 @@
-package com.zhanglin.practice;
+ï»¿package com.zhanglin.practice;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -151,7 +151,7 @@ public class AlbumActivity extends Activity
 		{
 			convertView=LayoutInflater.from(myCon).inflate(R.layout.doublerowitem,null);
 			/**
-			 * ÉèÖÃ×¨¼­Ãû
+			 * è®¾ç½®ä¸“è¾‘å
 			 */
 			TextView album=(TextView)convertView.findViewById(R.id.doublerow_textView1);
 			if(albums[position].length()>15)
@@ -163,12 +163,12 @@ public class AlbumActivity extends Activity
 				album.setText(albums[position]);
 			}
 			/**
-			 * ÉèÖÃÒÕÊõ¼ÒĞÕÃû
+			 * è®¾ç½®è‰ºæœ¯å®¶å§“å
 			 */
 			TextView artist=(TextView)convertView.findViewById(R.id.doublerow_textView2);
 			if(albums[position].equals("sdcard"))
 			{
-				artist.setText("Î´ÖªÒÕÊõ¼Ò");
+				artist.setText("æœªçŸ¥è‰ºæœ¯å®¶");
 			}
 			else
 			{
@@ -184,10 +184,10 @@ public class AlbumActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		return true;
 	}
 

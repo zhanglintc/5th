@@ -1,4 +1,4 @@
-package com.zhanglin.practice;
+ï»¿package com.zhanglin.practice;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,7 +26,7 @@ public class PlayListActivity extends Activity
 	private MyAdapter mMyAdapter;
 	
 	private String[] _titles;
-	private String[] _path; // ÒôÀÖÎÄ¼şµÄÂ·¾¶
+	private String[] _path; // éŸ³ä¹æ–‡ä»¶çš„è·¯å¾„
 	private String[] _artists;
 	private String[] _album;
 	private long[] _duration;
@@ -81,7 +81,7 @@ public class PlayListActivity extends Activity
 			}
 		});
 	}
-	// ¶¨Òå×Ô¼ºµÄÊÊÅäÆ÷,×¢ÒâgetCountºÍgetView·½·¨
+	// å®šä¹‰è‡ªå·±çš„é€‚é…å™¨,æ³¨æ„getCountå’ŒgetViewæ–¹æ³•
 	private class MyAdapter extends BaseAdapter
 	{
 		@Override
@@ -135,7 +135,7 @@ public class PlayListActivity extends Activity
 		if(c==null||c.getCount()==0)
 		{
 			builder=new AlertDialog.Builder(this);
-			builder.setMessage("´æ´¢ÁĞ±íÎª¿Õ...").setPositiveButton("È·¶¨",null);
+			builder.setMessage("å­˜å‚¨åˆ—è¡¨ä¸ºç©º...").setPositiveButton("ç¡®å®š",null);
 			ad=builder.create();
 			ad.show();
 		}
@@ -160,10 +160,10 @@ public class PlayListActivity extends Activity
 	{
 		// TODO Auto-generated method stub
 		// mainMenu=menu;
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		// return super.onCreateOptionsMenu(menu);
 		return true;
 	}
@@ -174,7 +174,7 @@ public class PlayListActivity extends Activity
 		switch(item.getItemId())
 		{
 		case 1:
-			Toast.makeText(PlayListActivity.this,"µ±Ç°ÒÑ¾­ÊÇ²¥·ÅÁĞ±í",Toast.LENGTH_LONG).show();
+			Toast.makeText(PlayListActivity.this,"å½“å‰å·²ç»æ˜¯æ’­æ”¾åˆ—è¡¨",Toast.LENGTH_LONG).show();
 			break;
 		case 2:
 			Intent playing=new Intent();

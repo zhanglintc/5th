@@ -1,9 +1,9 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 public class PublicList
 {
-	//×î´óÊıÁ¿1000Ê×¸è
+	//æœ€å¤§æ•°é‡1000é¦–æ­Œ
 	static String path[]=new String[1000];
 	static String title[]=new String[1000];
 	static String artist[]=new String[1000];

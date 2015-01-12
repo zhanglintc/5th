@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 import android.app.Activity;
@@ -15,7 +15,7 @@ public class SetModeActivity extends Activity
 	private RadioGroup radioGroup=null;
 	private RadioButton radioButton1,radioButton2,radioButton3=null;
 	private Button apply=null;
-	static int mode=1;//²¥·ÅÄ£Ê½,1È«Çú,2µ¥Çú,3Ëæ»ú
+	static int mode=1;//æ’­æ”¾æ¨¡å¼,1å…¨æ›²,2å•æ›²,3éšæœº
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)

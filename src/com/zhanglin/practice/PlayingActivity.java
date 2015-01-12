@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class PlayingActivity extends Activity
 	
 	static String completion="false";
 	static String gesture="false";
-	static String currentname;//¸èÇúÃû,title
+	static String currentname;//æ­Œæ›²å,title
 	static SeekBar seekbar;
 	Handler handler;
 	Button like;
@@ -71,7 +71,7 @@ public class PlayingActivity extends Activity
 		play_artist=(TextView)findViewById(R.id.play_artist);
 		play_album=(TextView)findViewById(R.id.play_album);
 		
-		gestureDetector=new GestureDetector(new ChangeGestureDetector(this)); // ÊÖÊÆÊ¶±ğ
+		gestureDetector=new GestureDetector(new ChangeGestureDetector(this)); // æ‰‹åŠ¿è¯†åˆ«
 
 		showingname.setText(PublicList.title[PublicList.currentItem]);
 
@@ -94,7 +94,7 @@ public class PlayingActivity extends Activity
 		CheckLikeButton();
 		
 		@SuppressWarnings("unused")
-		final OnTouchListener TouchLight=new OnTouchListener()// ¸ü¸ÄbuttonÁÁ¶ÈµÄÄ£°å
+		final OnTouchListener TouchLight=new OnTouchListener()// æ›´æ”¹buttonäº®åº¦çš„æ¨¡æ¿
 		{
 			public final float[] BT_SELECTED=new float[]
 			{1,0,0,0,50,0,1,0,0,50,0,0,1,0,50,0,0,0,1,0};
@@ -140,7 +140,7 @@ public class PlayingActivity extends Activity
 				return false;
 			}
 		};
-		/*************************** °´Å¥µÄ¸÷ÖÖ²Ù×÷¿ªÊ¼¿ªÊ¼ ***********************************/
+		/*************************** æŒ‰é’®çš„å„ç§æ“ä½œå¼€å§‹å¼€å§‹ ***********************************/
 		//last.setOnTouchListener(TouchDark);
 		//last.setOnTouchListener(TouchLight);
 		stop.setOnTouchListener(TouchDark);
@@ -259,7 +259,7 @@ public class PlayingActivity extends Activity
 			}
 		});
 
-		stop.setOnClickListener(new OnClickListener()// stop°´Å¥²Ù×÷
+		stop.setOnClickListener(new OnClickListener()// stopæŒ‰é’®æ“ä½œ
 				{
 
 					@Override
@@ -291,7 +291,7 @@ public class PlayingActivity extends Activity
 						}
 					}
 				});
-		start.setOnClickListener(new OnClickListener()// star°´Å¥
+		start.setOnClickListener(new OnClickListener()// staræŒ‰é’®
 				{
 
 					@Override
@@ -345,7 +345,7 @@ public class PlayingActivity extends Activity
 				if(playlistFlag=="has")
 				{
 					db.delete("music","title=?",new String[] {PublicList.title[PublicList.currentItem]});
-					Toast.makeText(PlayingActivity.this,"È¡ÏûÊÕ²Ø³É¹¦",Toast.LENGTH_SHORT).show();
+					Toast.makeText(PlayingActivity.this,"å–æ¶ˆæ”¶è—æˆåŠŸ",Toast.LENGTH_SHORT).show();
 				}
 				else
 				{
@@ -356,7 +356,7 @@ public class PlayingActivity extends Activity
 					values.put("album",PublicList.album[PublicList.currentItem]);
 					values.put("duration",PublicList.duration[PublicList.currentItem]);
 					db.insert("music",null,values);
-					Toast.makeText(PlayingActivity.this,"ÊÕ²Ø³É¹¦",Toast.LENGTH_SHORT).show();
+					Toast.makeText(PlayingActivity.this,"æ”¶è—æˆåŠŸ",Toast.LENGTH_SHORT).show();
 				}
 				playlistFlag="nothas";
 				CheckLikeButton();
@@ -375,7 +375,7 @@ public class PlayingActivity extends Activity
 			@Override
 			public void onStartTrackingTouch(SeekBar arg0)
 			{
-				// ¿ªÊ¼ÍÏ¶¯½ø¶ÈÌõ
+				// å¼€å§‹æ‹–åŠ¨è¿›åº¦æ¡
 				// TODO Auto-generated method stub
 				delaythread.stop();
 			}
@@ -383,9 +383,9 @@ public class PlayingActivity extends Activity
 			@Override
 			public void onStopTrackingTouch(SeekBar arg0)
 			{
-				// Í£Ö¹ÍÏ¶¯½ø¶ÈÌõ
+				// åœæ­¢æ‹–åŠ¨è¿›åº¦æ¡
 				// TODO Auto-generated method stub
-				PlayerServices.myMediaPlayer.seekTo(seekbar.getProgress());// ½«media½ø¶ÈÉèÖÃÎªµ±Ç°seekBarµÄ½ø¶È
+				PlayerServices.myMediaPlayer.seekTo(seekbar.getProgress());// å°†mediaè¿›åº¦è®¾ç½®ä¸ºå½“å‰seekBarçš„è¿›åº¦
 				PlayerServices.myMediaPlayer.start();
 				if(delaythread.isAlive()==false)
 				{
@@ -394,9 +394,9 @@ public class PlayingActivity extends Activity
 
 			}
 		});
-		/******************************°´Å¥²Ù×÷½áÊø *************************************/
+		/******************************æŒ‰é’®æ“ä½œç»“æŸ *************************************/
 		/*******************************************************************************/
-		handler=new Handler()// ¶¯Ì¬Ë¢ĞÂÒ»Ğ©Êı¾İ
+		handler=new Handler()// åŠ¨æ€åˆ·æ–°ä¸€äº›æ•°æ®
 		{
 			public void handleMessage(Message msg)
 			{
@@ -414,7 +414,7 @@ public class PlayingActivity extends Activity
 				{
 					PlayerServices.myMediaPlayer.seekTo(PlayerServices.myMediaPlayer.getCurrentPosition()-PlayerServices.myMediaPlayer.getDuration()/20);
 				}
-				if(PlayerServices.myMediaPlayer.isPlaying()==true)// ÉèÖÃstart°´Å¥µÄ±ä»¯
+				if(PlayerServices.myMediaPlayer.isPlaying()==true)// è®¾ç½®startæŒ‰é’®çš„å˜åŒ–
 				{
 					start.setImageResource(R.drawable.pause);
 				}
@@ -433,9 +433,9 @@ public class PlayingActivity extends Activity
 				else
 					play_album.setText(PublicList.album[PublicList.currentItem]);
 				
-				//Èç¹ûÒ»Ê×¸èÍê³É»òÕßÊÖÊÆÉÏÏÂÇú£¬Ò²ĞèÒªÅĞ¶Ïµ±Ç°like°´Å¥µÄ×´Ì¬
-				//lastºÍnextÒ²Ë¢ĞÂÁË×´Ì¬£¬OnCreatÊ±Ò²Ë¢ĞÂÁË
-				//·½·¨ºÜ±¿×¾,ºÜÎŞÄÎ
+				//å¦‚æœä¸€é¦–æ­Œå®Œæˆæˆ–è€…æ‰‹åŠ¿ä¸Šä¸‹æ›²ï¼Œä¹Ÿéœ€è¦åˆ¤æ–­å½“å‰likeæŒ‰é’®çš„çŠ¶æ€
+				//lastå’Œnextä¹Ÿåˆ·æ–°äº†çŠ¶æ€ï¼ŒOnCreatæ—¶ä¹Ÿåˆ·æ–°äº†
+				//æ–¹æ³•å¾ˆç¬¨æ‹™,å¾ˆæ— å¥ˆ
 				if(completion=="true"||gesture=="true")
 				{
 					CheckLikeButton();
@@ -444,7 +444,7 @@ public class PlayingActivity extends Activity
 				}
 			}
 		};
-	}// end of onCreat ·½·¨
+	}// end of onCreat æ–¹æ³•
 
 	@Override
 	protected void onStart()
@@ -470,7 +470,7 @@ public class PlayingActivity extends Activity
 		//addNotify();
 	}
 
-	class DelayThread extends Thread // ¶ÁÈ¡ÒôÀÖÆµÂÊµÄÏß³Ì
+	class DelayThread extends Thread // è¯»å–éŸ³ä¹é¢‘ç‡çš„çº¿ç¨‹
 	{
 		int milliseconds;
 
@@ -486,7 +486,7 @@ public class PlayingActivity extends Activity
 				try
 				{
 					sleep(milliseconds);
-					// ÉèÖÃÒôÀÖ½ø¶È¶ÁÈ¡ÆµÂÊ
+					// è®¾ç½®éŸ³ä¹è¿›åº¦è¯»å–é¢‘ç‡
 				}
 				catch(InterruptedException e)
 				{
@@ -499,18 +499,18 @@ public class PlayingActivity extends Activity
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu)// Menu²úÉú
+	public boolean onCreateOptionsMenu(Menu menu)// Menuäº§ç”Ÿ
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"²¥·ÅÄ£Ê½");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ’­æ”¾æ¨¡å¼");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		return true;
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item)// µã»÷MenuµÄ¾ßÌå²Ù×÷
+	public boolean onOptionsItemSelected(MenuItem item)// ç‚¹å‡»Menuçš„å…·ä½“æ“ä½œ
 	{
 		// TODO Auto-generated method stub
 		switch(item.getItemId())
@@ -545,7 +545,7 @@ public class PlayingActivity extends Activity
 		PlayerServices.lastMusic();
 	}
 	
-	@Override //ÊÖÊÆ²Ù×÷
+	@Override //æ‰‹åŠ¿æ“ä½œ
 	public boolean onTouchEvent(MotionEvent event)
 	{
 		return gestureDetector.onTouchEvent(event);
@@ -565,12 +565,12 @@ public class PlayingActivity extends Activity
 		}
 		if(playlistFlag=="has")
 		{
-			like.setText("È¡Ïû");
+			like.setText("å–æ¶ˆ");
 			like.setTextColor(Color.RED);
 		}
 		else
 		{
-			like.setText("ÊÕ²Ø");
+			like.setText("æ”¶è—");
 			like.setTextColor(Color.WHITE);
 		}
 		playlistFlag="nothas";
@@ -581,13 +581,13 @@ public class PlayingActivity extends Activity
 		String ns=Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager=(NotificationManager)getSystemService(ns);
 		int icon=R.drawable.android;
-		CharSequence tickerText="²¥·ÅÆ÷ÕıÔÚºóÌ¨ÔËĞĞ";//PublicList.title[PublicList.currentItem];
+		CharSequence tickerText="æ’­æ”¾å™¨æ­£åœ¨åå°è¿è¡Œ";//PublicList.title[PublicList.currentItem];
 		long when=System.currentTimeMillis();
 		
 		Notification notification=new Notification(icon,tickerText,when);
 		Context context=getApplicationContext();
 		CharSequence contentTitle="MusicPlayer";
-		CharSequence contentText="µã»÷¿ìËÙ½øÈë²¥·ÅÆ÷";//+PublicList.title[PublicList.currentItem];//"´ò¿ªÕıÔÚ²¥·ÅÇúÄ¿";
+		CharSequence contentText="ç‚¹å‡»å¿«é€Ÿè¿›å…¥æ’­æ”¾å™¨";//+PublicList.title[PublicList.currentItem];//"æ‰“å¼€æ­£åœ¨æ’­æ”¾æ›²ç›®";
 		Intent notificationIntent=new Intent(this,PlayingActivity.class);
 		PendingIntent contentIntent=PendingIntent.getActivity(this,0,notificationIntent,Intent.FLAG_ACTIVITY_NEW_TASK);
 		

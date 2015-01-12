@@ -1,4 +1,4 @@
-package com.zhanglin.practice;
+ï»¿package com.zhanglin.practice;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,7 +28,7 @@ public class MainActivity extends Activity
 	private ImageButton artist,album,playlist,songs=null;
 	private int[] _ids;
 	private String[] _titles;
-	private String[] _path; // ÒôÀÖÎÄ¼şµÄÂ·¾¶
+	private String[] _path; // éŸ³ä¹æ–‡ä»¶çš„è·¯å¾„
 	private String[] _artists;
 	private String[] _album;
 	private long[] _duration;
@@ -45,14 +45,14 @@ public class MainActivity extends Activity
 		ButtonBonder();
 		setListData();
 		Log.i("test",_path[0]);
-		// ´´½¨Êı¾İ¿â
+		// åˆ›å»ºæ•°æ®åº“
 		DataBase dataBase=new DataBase(MainActivity.this,"Player_db");
 		SQLiteDatabase db=dataBase.getWritableDatabase();
 
 		Intent startserviceIntent=new Intent(MainActivity.this,PlayerServices.class);
 		startService(startserviceIntent);
 
-		// Ìí¼Ó¸èÇúµ½²¥·ÅÁĞ±í
+		// æ·»åŠ æ­Œæ›²åˆ°æ’­æ”¾åˆ—è¡¨
 		for(int i=0;i<c.getCount();i++)
 		{
 			PublicList.list(_path[i],_titles[i],_artists[i],_album[i],_duration[i],i);
@@ -68,7 +68,7 @@ public class MainActivity extends Activity
 			;
 		}
 
-		// ¿ØÖÆ°´Å¥°´ÏÂÊÇµÄÃ÷°µĞ§¹û
+		// æ§åˆ¶æŒ‰é’®æŒ‰ä¸‹æ˜¯çš„æ˜æš—æ•ˆæœ
 		final OnTouchListener TouchLight=new OnTouchListener()
 		{
 			public final float[] BT_SELECTED=new float[]
@@ -92,7 +92,7 @@ public class MainActivity extends Activity
 				return false;
 			}
 		};
-		// Í¬ÉÏ
+		// åŒä¸Š
 		final OnTouchListener TouchDark=new OnTouchListener()
 		{
 			public final float[] BT_SELECTED=new float[]
@@ -116,7 +116,7 @@ public class MainActivity extends Activity
 				return false;
 			}
 		};
-		// °´Å¥µÄĞ§¹û
+		// æŒ‰é’®çš„æ•ˆæœ
 		artist.setOnTouchListener(TouchLight);
 		artist.setOnTouchListener(TouchDark);
 		album.setOnTouchListener(TouchLight);
@@ -184,7 +184,7 @@ public class MainActivity extends Activity
 		return super.onKeyDown(keyCode,event);
 	}
 
-	// °ó¶¨°´Å¥µÄº¯Êı
+	// ç»‘å®šæŒ‰é’®çš„å‡½æ•°
 	public void ButtonBonder()
 	{
 		artist=(ImageButton)findViewById(R.id.artist);
@@ -193,19 +193,19 @@ public class MainActivity extends Activity
 		songs=(ImageButton)findViewById(R.id.songs);
 	}
 
-	// ´´½¨Menu
+	// åˆ›å»ºMenu
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"ÍË³ö");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"é€€å‡º");
 		return true;
 	}
 
-	// Menu°´¼üĞ§¹û
+	// MenuæŒ‰é”®æ•ˆæœ
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -245,7 +245,7 @@ public class MainActivity extends Activity
 		if(c==null||c.getCount()==0)
 		{
 			builder=new AlertDialog.Builder(this);
-			builder.setMessage("´æ´¢ÁĞ±íÎª¿Õ...").setPositiveButton("È·¶¨",null);
+			builder.setMessage("å­˜å‚¨åˆ—è¡¨ä¸ºç©º...").setPositiveButton("ç¡®å®š",null);
 			ad=builder.create();
 			ad.show();
 		}
@@ -273,13 +273,13 @@ public class MainActivity extends Activity
 		String ns=Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager=(NotificationManager)getSystemService(ns);
 		int icon=R.drawable.fifth;
-		CharSequence tickerText="²¥·ÅÆ÷ÕıÔÚºóÌ¨ÔËĞĞ";// PublicList.title[PublicList.currentItem];
+		CharSequence tickerText="æ’­æ”¾å™¨æ­£åœ¨åå°è¿è¡Œ";// PublicList.title[PublicList.currentItem];
 		long when=System.currentTimeMillis();
 
 		Notification notification=new Notification(icon,tickerText,when);
 		Context context=getApplicationContext();
 		CharSequence contentTitle="Fifth Player";
-		CharSequence contentText="µã»÷¿ìËÙ½øÈë²¥·ÅÆ÷";// +PublicList.title[PublicList.currentItem];//"´ò¿ªÕıÔÚ²¥·ÅÇúÄ¿";
+		CharSequence contentText="ç‚¹å‡»å¿«é€Ÿè¿›å…¥æ’­æ”¾å™¨";// +PublicList.title[PublicList.currentItem];//"æ‰“å¼€æ­£åœ¨æ’­æ”¾æ›²ç›®";
 		Intent notificationIntent=new Intent(this,MainActivity.class);
 		PendingIntent contentIntent=PendingIntent.getActivity(this,0,notificationIntent,Intent.FLAG_ACTIVITY_NEW_TASK);
 

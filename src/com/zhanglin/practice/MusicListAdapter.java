@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 import android.content.Context;
@@ -68,7 +68,7 @@ public class MusicListAdapter extends BaseAdapter
 		TextView tv_singer=(TextView)convertView.findViewById(R.id.singer);
 		if(myCur.getString(2).equals("<unknown>"))
 		{
-			tv_singer.setText("Î´ÖªÒÕÊõ¼Ò");
+			tv_singer.setText("æœªçŸ¥è‰ºæœ¯å®¶");
 		}
 		else
 		{
@@ -104,7 +104,7 @@ public class MusicListAdapter extends BaseAdapter
 	}
 
 	/**
-	 * Ê±¼ä¸ñÊ½×ª»»
+	 * æ—¶é—´æ ¼å¼è½¬æ¢
 	 * 
 	 * @param time
 	 * @return

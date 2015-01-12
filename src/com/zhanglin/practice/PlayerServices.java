@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 import java.util.Random;
@@ -16,7 +16,7 @@ import android.util.Log;
 
 public class PlayerServices extends Service
 {
-	public static MediaPlayer myMediaPlayer=new MediaPlayer();// ²¥·Å¶ÔÏó
+	public static MediaPlayer myMediaPlayer=new MediaPlayer();// æ’­æ”¾å¯¹è±¡
 	private int isfirst=0;
 	static Random random=new Random();
 
@@ -85,7 +85,7 @@ public class PlayerServices extends Service
 					switch(SetModeActivity.mode)
 					{
 					case 1:
-						if(++PublicList.currentItem>PublicList.size)//if ÀïÃæ--ÒÑ¾­Ê¹currentItem±ä»¯ÁË
+						if(++PublicList.currentItem>PublicList.size)//if é‡Œé¢--å·²ç»ä½¿currentItemå˜åŒ–äº†
 						{
 							PublicList.currentItem=0;
 						}
@@ -122,7 +122,7 @@ public class PlayerServices extends Service
 		switch(SetModeActivity.mode)
 		{
 		case 1:
-			if(--PublicList.currentItem<0)//if ÀïÃæ--ÒÑ¾­Ê¹currentItem±ä»¯ÁË
+			if(--PublicList.currentItem<0)//if é‡Œé¢--å·²ç»ä½¿currentItemå˜åŒ–äº†
 			{
 				PublicList.currentItem=PublicList.size;
 			}
@@ -176,7 +176,7 @@ public class PlayerServices extends Service
 		Notification notification=new Notification(icon,tickerText,when);
 		Context context=getApplicationContext();
 		CharSequence contentTitle="MusicPlayer";
-		CharSequence contentText="ÕıÔÚ²¥·Å£º"+PublicList.title[PublicList.currentItem];//"´ò¿ªÕıÔÚ²¥·ÅÇúÄ¿";
+		CharSequence contentText="æ­£åœ¨æ’­æ”¾ï¼š"+PublicList.title[PublicList.currentItem];//"æ‰“å¼€æ­£åœ¨æ’­æ”¾æ›²ç›®";
 		Intent notificationIntent=new Intent(this,PlayingActivity.class);
 		PendingIntent contentIntent=PendingIntent.getActivity(this,0,notificationIntent,Intent.FLAG_ACTIVITY_NEW_TASK);
 		

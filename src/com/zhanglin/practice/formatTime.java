@@ -1,4 +1,4 @@
-package com.zhanglin.practice;
+﻿package com.zhanglin.practice;
 
 public class formatTime
 {

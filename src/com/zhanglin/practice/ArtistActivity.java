@@ -1,4 +1,4 @@
-
+ï»¿
 package com.zhanglin.practice;
 
 
@@ -31,7 +31,7 @@ public class ArtistActivity extends Activity
 	
 	private int[] _ids;
 	private String[] _titles;
-	private String[] _path; // ÒôÀÖÎÄ¼şµÄÂ·¾¶
+	private String[] _path; // éŸ³ä¹æ–‡ä»¶çš„è·¯å¾„
 	private String[] _artists;
 	private long[] _duration;
 	private Cursor c;
@@ -58,7 +58,7 @@ public class ArtistActivity extends Activity
 		{
 			if(c.getString(2).equals("<unknown>"))
 			{
-				set.add("Î´ÖªÒÕÊõ¼Ò");
+				set.add("æœªçŸ¥è‰ºæœ¯å®¶");
 			}
 			else
 			{
@@ -75,7 +75,7 @@ public class ArtistActivity extends Activity
 			artists[i]=it.next().toString();
 			i++;
 		}
-		/* ¼ÆËãÃ¿¸ö¸èÊÖÓµÓĞµÄ¸èÇúÊı */
+		/* è®¡ç®—æ¯ä¸ªæ­Œæ‰‹æ‹¥æœ‰çš„æ­Œæ›²æ•° */
 		int counts[]=new int[num];
 		int n=0;
 		c.moveToFirst();
@@ -147,17 +147,17 @@ public class ArtistActivity extends Activity
 		{
 			convertView=LayoutInflater.from(myCon).inflate(R.layout.doublerowitem,null);
 
-			// ÉèÖÃÒÕÊõ¼ÒĞÕÃû
+			// è®¾ç½®è‰ºæœ¯å®¶å§“å
 			TextView artist=(TextView)convertView.findViewById(R.id.doublerow_textView1);
 			if(artists[position].length()>15)
 				artist.setText(artists[position].substring(0,12)+"...");
 			else
 				artist.setText(artists[position]);
 
-			// ÉèÖÃ¸èÊÖÓµÓĞµÄ¸èÇúÊı
+			// è®¾ç½®æ­Œæ‰‹æ‹¥æœ‰çš„æ­Œæ›²æ•°
 			TextView musicCounts=(TextView)convertView.findViewById(R.id.doublerow_textView2);
-			musicCounts.setText("¹²ÓĞ"+counts[position]+"Ê×¸èÇú");
-			// ÉèÖÃÁĞ±íÏîÍ¼±ê
+			musicCounts.setText("å…±æœ‰"+counts[position]+"é¦–æ­Œæ›²");
+			// è®¾ç½®åˆ—è¡¨é¡¹å›¾æ ‡
 			ImageView Artistsitem=(ImageView)convertView.findViewById(R.id.doublerow_image);
 			Artistsitem.setImageResource(R.drawable.item);
 			return convertView;
@@ -179,7 +179,7 @@ public class ArtistActivity extends Activity
 		if(c==null||c.getCount()==0)
 		{
 			builder=new AlertDialog.Builder(this);
-			builder.setMessage("´æ´¢ÁĞ±íÎª¿Õ...").setPositiveButton("È·¶¨",null);
+			builder.setMessage("å­˜å‚¨åˆ—è¡¨ä¸ºç©º...").setPositiveButton("ç¡®å®š",null);
 			ad=builder.create();
 			ad.show();
 		}
@@ -203,10 +203,10 @@ public class ArtistActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		// TODO Auto-generated method stub
-		menu.add(0,1,Menu.NONE,"ÊÕ²ØÁĞ±í");
-		menu.add(0,2,Menu.NONE,"ÕıÔÚ²¥·Å");
-		menu.add(0,3,Menu.NONE,"¹ØÓÚ");
-		menu.add(0,4,Menu.NONE,"·µ»Ø");
+		menu.add(0,1,Menu.NONE,"æ”¶è—åˆ—è¡¨");
+		menu.add(0,2,Menu.NONE,"æ­£åœ¨æ’­æ”¾");
+		menu.add(0,3,Menu.NONE,"å…³äº");
+		menu.add(0,4,Menu.NONE,"è¿”å›");
 		return true;
 	}
 
