@@ -1,4 +1,4 @@
-﻿package com.zhanglin.practice;
+package com.zhanglin.practice;
 
 import android.app.Activity;
 import android.app.AlertDialog;
