@@ -44,7 +44,7 @@ public class MainActivity extends Activity
 		addNotify();
 		ButtonBonder();
 		setListData();
-		Log.i("test",_path[0]);
+		// Log.i("test",_path[0]);
 		// 创建数据库
 		DataBase dataBase=new DataBase(MainActivity.this,"Player_db");
 		SQLiteDatabase db=dataBase.getWritableDatabase();
